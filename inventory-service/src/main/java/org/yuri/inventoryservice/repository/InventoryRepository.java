@@ -4,9 +4,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.yuri.inventoryservice.model.Inventory;
 
+import java.util.List;
 import java.util.Optional;
 
-@Repository
-public interface InventoryRepository extends JpaRepository<Inventory, Long> {
-    Optional<Inventory> findByUpcCode(final String upcCode);
+public interface InventoryRepository {
+    List<Inventory> findByUpcCodeIn(final List<String> upcCodes);
+
+    List<Inventory> findAll();
+
+    void saveAll(final List<Inventory> inventoryList);
 }
