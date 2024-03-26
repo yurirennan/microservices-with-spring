@@ -2,6 +2,7 @@ package com.renyu.productservice.service.impl;
 
 import com.renyu.productservice.dto.CreateProductDTO;
 import com.renyu.productservice.dto.ProductDTO;
+import com.renyu.productservice.exceptions.ProductNotFoundException;
 import com.renyu.productservice.model.Product;
 import com.renyu.productservice.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
         final Optional<Product> productOptional = this.productRepository.findById(productId);
 
         if (productOptional.isEmpty()) {
-            throw new RuntimeException("PRODUCT NOT FOUND");
+            throw new ProductNotFoundException("PRODUCT NOT FOUND!");
         }
 
         final Product product = productOptional.get();
