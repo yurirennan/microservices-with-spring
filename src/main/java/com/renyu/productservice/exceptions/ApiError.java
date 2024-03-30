@@ -1,13 +1,14 @@
 package com.renyu.productservice.exceptions;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 @Data
+@NoArgsConstructor
 public class ApiError {
     private String resume;
     private HttpStatus status;
