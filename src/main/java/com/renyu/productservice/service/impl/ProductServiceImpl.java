@@ -22,11 +22,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void createProduct(final CreateProductDTO productDTO) {
+    public ProductDTO createProduct(final CreateProductDTO productDTO) {
 
         final Product product = productDTO.toProduct();
 
-        this.productRepository.save(product);
+        final Product productCreated = this.productRepository.save(product);
+
+        return ProductDTO.fromProduct(productCreated);
     }
 
     @Override

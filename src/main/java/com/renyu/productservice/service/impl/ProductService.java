@@ -6,7 +6,7 @@ import com.renyu.productservice.dto.ProductDTO;
 import java.util.List;
 
 public interface ProductService {
-    void createProduct(final CreateProductDTO productDTO);
+    ProductDTO createProduct(final CreateProductDTO productDTO);
 
     ProductDTO getProduct(final String productId);
 

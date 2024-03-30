@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/api/products")
 public class ProductController {
 
-    private ProductService productService;
+    private final ProductService productService;
 
     @Autowired
     public ProductController(final ProductService productService) {
@@ -24,11 +24,11 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> createProduct(@RequestBody @Valid CreateProductDTO createProductDTO ) {
+    public ResponseEntity<ProductDTO> createProduct(@RequestBody @Valid CreateProductDTO createProductDTO ) {
 
-        this.productService.createProduct(createProductDTO);
+        final ProductDTO productDTO = this.productService.createProduct(createProductDTO);
 
-        return ResponseEntity.status(HttpStatus.OK).build();
+        return ResponseEntity.status(HttpStatus.OK).body(productDTO);
     }
 
     @GetMapping("/{id}")
