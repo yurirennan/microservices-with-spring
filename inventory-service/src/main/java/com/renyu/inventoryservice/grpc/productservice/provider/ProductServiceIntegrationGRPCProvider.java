@@ -1,6 +1,6 @@
-package com.renyu.inventoryservice.grpc.provider;
+package com.renyu.inventoryservice.grpc.productservice.provider;
 
-import com.renyu.inventoryservice.grpc.ProductServiceGrpc;
+import com.renyu.inventoryservice.grpc.productservice.ProductServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.beans.factory.annotation.Qualifier;
