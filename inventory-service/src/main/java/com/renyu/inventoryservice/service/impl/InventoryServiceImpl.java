@@ -2,7 +2,7 @@ package com.renyu.inventoryservice.service.impl;
 
 import com.renyu.inventoryservice.dto.InventoryItemRequestDTO;
 import com.renyu.inventoryservice.dto.InventoryItemResponseDTO;
-import com.renyu.inventoryservice.grpc.GRPCProductService;
+import com.renyu.inventoryservice.grpc.productservice.GRPCProductService;
 import com.renyu.inventoryservice.model.InventoryItem;
 import com.renyu.inventoryservice.repository.InventoryItemRepository;
 import com.renyu.inventoryservice.service.InventoryService;
