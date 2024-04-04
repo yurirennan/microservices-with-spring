@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+package com.renyu.inventoryservice.grpc.productservice;
+
+message ProductExistsRequest {
+  string skuCode = 1;
+}
+
+message ProductExistsResponse {
+  bool exists = 1;
+}
+
+service ProductService {
+  rpc productExists(ProductExistsRequest) returns (ProductExistsResponse);
+}
