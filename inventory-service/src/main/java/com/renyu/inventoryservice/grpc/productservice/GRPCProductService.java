@@ -1,6 +1,5 @@
 package com.renyu.inventoryservice.grpc.productservice;
 
-import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +27,7 @@ public class GRPCProductService {
     }
 
     private boolean fallback(final String skuCode, Throwable e) {
-        return true;
+        return false;
     }
 
 }
