@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+package com.renyu.orderservice.grpc.productservice;
+
+message ProductDTO {
+  string skuCode = 1;
+  bool inStock = 2;
+}
+
+message ProductInInventoryRequest {
+  repeated string skuCode = 1;
+}
+
+message ProductInInventoryResponse {
+  repeated ProductDTO product = 1;
+}
+
+service InventoryService {
+  rpc productInStock(ProductInInventoryRequest) returns (ProductInInventoryResponse);
+}
